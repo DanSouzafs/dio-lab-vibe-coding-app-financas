@@ -58,4 +58,25 @@ Após a confirmação da transação no chat, o estado do React é atualizado e 
 ### O que funcionou bem?
 * **A abordagem em camadas (Vibe Coding real):** Separar a criação em etapas funcionou perfeitamente. Primeiro a IA gerou a interface estática com dados mockados. Depois, a lógica de NLP foi adicionada com sucesso. Isso evitou alucinações da IA.
 * **Implementação de features complexas:** Quando enviei o contexto do PRD, a IA conseguiu implementar navegação inferior (bottom nav), gráficos (Recharts) e sistema de metas de uma só vez, conectando tudo de forma lógica.
-* **Refinamento estético:** Comandos curtos e
+* **Refinamento estético:** Comandos curtos e diretos para adicionar Dark Mode e animações com `framer-motion` foram interpretados e aplicados pela IA sem quebrar o layout existente.
+
+### O que não funcionou como o esperado / Desafios?
+* **Categorização engessada no início:** A inteligência artificial classificou a receita de "freelance" na categoria genérica "Outros". Foi necessário perceber isso durante os testes práticos para entender que faltava uma categoria específica para "Renda".
+* **Lógica de estados isolados:** Inicialmente, o "Saldo Atual" era um valor base fixo (R$ 3.240) somado às interações do chat. Percebi que o usuário não conseguia alterar esse valor inicial, o que me obrigou a fazer uma nova iteração apenas para criar um modal de edição de saldo.
+
+### O que aprendi sobre conversar com IAs?
+* **O App não nasce pronto no primeiro prompt:** Vibe coding é um diálogo constante. A interface base ficou pronta rápido, mas a usabilidade real (como poder clicar em um card para editar/excluir uma transação ou alterar o saldo base) exigiu testes manuais meus e prompts corretivos.
+* **A IA é proativa, mas precisa de limites:** Ao testar o app, a IA sugeriu sozinha criar a categoria "Renda" ou adicionar botões de edição de saldo. Aprender a ler as respostas da IA e aceitar (ou rejeitar) essas sugestões é fundamental para não perder o controle do escopo do projeto.
+
+---
+
+## ⏱️ Histórico de Iterações (Log de Vibe Coding)
+Um resumo das etapas de construção com o Lovable:
+
+* **21:49 - Prompt 1 (UI):** Criação da interface 'mobile-first' com paleta verde esmeralda e mensagens mockadas.
+* **21:52 - Prompt 2 (Lógica):** Implementação da função `parseTransaction` (NLP mock). O chat passou a identificar valor, categoria e tipo, atualizando o dashboard.
+* **22:06 - Prompt 3 (PRD):** Inserção do contexto de metas, dicas e relatórios. A IA criou a navegação em abas e os gráficos.
+* **22:15 - Refinamento (Dark Mode):** Adição do botão no header para alternar entre modo claro e escuro.
+* **22:25 - Refinamento (Animações):** Implementação de transições suaves entre as abas e entrada de cards usando `framer-motion`.
+* **22:46 - Usabilidade (Edição de Cards):** Comando para permitir a edição ou exclusão de transações clicando diretamente no card gerado pelo agente.
+* **22:51 - Usabilidade (Edição de Saldo):** Criação de um dialog no header permitindo a alteração manual do saldo inicial, refletindo em toda a aplicação.
