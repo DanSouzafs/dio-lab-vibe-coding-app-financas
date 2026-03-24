@@ -1,5 +1,7 @@
 # 🎙️💸 Finanças na Voz - Desafio DIO
 
+🔗 **Acesse o protótipo funcional aqui:** [finanas-na-voz.lovable.app](https://finanas-na-voz.lovable.app)
+
 Este repositório contém a documentação e o processo de criação do MVP "Finanças na Voz", um projeto prático desenvolvido para exercitar o conceito de Vibe Coding e a estruturação de Prompts (PRD).
 
 ## 📱 Sobre o Aplicativo (Resumo)
